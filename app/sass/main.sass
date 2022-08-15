@@ -1,0 +1,112 @@
+@import "mixins.sass"
+@import "variables.sass"
+
+$fa-font-path: "../font-awesome/css/font-awesome.min.css"
+@import "../font-awesome/css/font-awesome.min.css"
+
+body * 
+    box-sizing: border-box
+
+body 
+    background-color: $bg-color
+    @include font
+
+.fa-caret-down 
+    font-family: fontawesome
+
+a 
+    color: inherit
+    cursor: pointer
+    text-decoration: none
+
+a:hover 
+    cursor: pointer
+
+.sort-table 
+    margin: 18px 10px
+    table-layout: fixed
+    border-collapse: collapse
+
+.sort-table__header th 
+    padding: 6px
+    vertical-align: middle
+    font-size: 16px
+    font-weight: 700
+    background-color: $color-white
+
+.sort-table td 
+    padding: 7px 16px
+
+.sort-table__body tr:nth-child(odd) 
+    background-color: $color-white
+
+.sort-table__body tr:nth-child(even) 
+    background-color: $color-light-gray
+
+
+@media (min-width: 481px) 
+    .sort-table 
+        max-width: 408px    
+
+    .sort-table td 
+        border: 1px solid $color-gray    
+
+    .sort-table td:first-child 
+        border-left: 0    
+
+    .sort-table td:last-child 
+        border-right: 0    
+
+    .sort-table__header th:first-child 
+        border-top-left-radius: $table-br    
+
+    .sort-table__header th:last-child 
+        border-top-right-radius: $table-br   
+
+    .sort-table__body tr:last-child td:first-child 
+        border-bottom-left-radius: $table-br    
+
+    .sort-table__body tr:last-child td:last-child 
+        border-bottom-right-radius: $table-br    
+
+    .sort-table__body tr:last-child td 
+        border-bottom: 0    
+
+    .sort-table__modul 
+        width: 10rem    
+
+    .sort-table__autor 
+        width: 6rem
+
+    .sort-table__duration 
+        width: 9rem
+   
+
+@media (max-width: 480px) 
+    .sort-table 
+        margin-left: auto
+        margin-right: auto
+        width: 96%
+        display: flex
+        flex-direction: column    
+
+    .sort-table__header  
+        border-bottom: 1px solid $color-gray   
+
+    tr 
+        display: flex
+        flex-direction: column    
+
+    .sort-table__modul,
+    .sort-table__autor 
+        display: none
+    
+    [data-value]::before 
+        content: attr(data-value) ": "
+        font-weight: 900
+    
+    .sort-table__time 
+        border-bottom: 1px solid $color-gray  
+    
+
+
